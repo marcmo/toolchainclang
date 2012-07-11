@@ -17,7 +17,7 @@ module Cxxproject
           d.file_name = File.expand_path(scan_res[0][0])
           d.line_number = scan_res[0][1].to_i
           d.message = scan_res[0][4]
-          if (scan_res[0][3].include?".")
+          if (scan_res[0][3].include?("."))
             d.severity = SEVERITY_ERROR
             d.message = scan_res[0][3] + ": " + d.message
           else
