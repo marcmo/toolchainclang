@@ -1,11 +1,10 @@
-
 cxx_plugin do |cxx,bbs,log|
 
   require 'errorparser/clang_compiler_error_parser'
   toolchain "clang",
     :COMPILER =>
       {
-        :CPP => 
+        :CPP =>
           {
             :COMMAND => "clang++",
             :DEFINE_FLAG => "-D",
@@ -13,22 +12,22 @@ cxx_plugin do |cxx,bbs,log|
             :INCLUDE_PATH_FLAG => "-I",
             :COMPILE_FLAGS => "-c ",
             :DEP_FLAGS => "-MMD -MF ", # empty space at the end is important!
-            :ERROR_PARSER => ClangCompilerErrorParser.new
+            :ERROR_PARSER => Cxxproject::ClangCompilerErrorParser.new
           },
-        :C => 
+        :C =>
           {
             :BASED_ON => :CPP,
             :COMMAND => "clang",
             :COMPILE_FLAGS => "-c ",
             :DEP_FLAGS => "-MMD -MF ", # empty space at the end is important!
-            :ERROR_PARSER => ClangCompilerErrorParser.new
+            :ERROR_PARSER => Cxxproject::ClangCompilerErrorParser.new
           },
         :ASM =>
           {
             :BASED_ON => :C,
           }
       },
-    :LINKER => 
+    :LINKER =>
       {
         :COMMAND => "clang++",
         :SCRIPT => "-T",
