@@ -1,6 +1,6 @@
 $:.unshift(File.dirname(__FILE__)+"/")
 
-PKG_VERSION = "0.1.1"
+PKG_VERSION = "0.1.2"
 
 Gem::Specification.new do |s|
   s.name = "cxxproject_clangtoolchain"
