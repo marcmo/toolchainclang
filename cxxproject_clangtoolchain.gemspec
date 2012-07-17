@@ -1,10 +1,11 @@
-$:.unshift(File.dirname(__FILE__)+"/")
-
-PKG_VERSION = "0.1.2"
+# -*- encoding: utf-8 -*-
+gem_name = 'cxxproject_clangtoolchain'
+require File.expand_path("lib/#{gem_name}/version")
 
 Gem::Specification.new do |s|
-  s.name = "cxxproject_clangtoolchain"
-  s.version = PKG_VERSION
+  s.name = gem_name
+  s.version = CxxprojectClangToolchain::VERSION
+
   s.summary = "toolchain support for clang."
   s.description = <<-EOF
     Toolchain supporting clang
