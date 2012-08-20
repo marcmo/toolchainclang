@@ -10,7 +10,7 @@ cxx_plugin do |cxx,bbs,log|
             :DEFINE_FLAG => "-D",
             :OBJECT_FILE_FLAG => "-o",
             :INCLUDE_PATH_FLAG => "-I",
-            :COMPILE_FLAGS => "-c ",
+            :COMPILE_FLAGS => "-c -W",
             :DEP_FLAGS => "-MMD -MF ", # empty space at the end is important!
             :ERROR_PARSER => Cxxproject::ClangCompilerErrorParser.new
           },
@@ -18,7 +18,7 @@ cxx_plugin do |cxx,bbs,log|
           {
             :BASED_ON => :CPP,
             :COMMAND => "clang",
-            :COMPILE_FLAGS => "-c ",
+            :COMPILE_FLAGS => "-c -W",
             :DEP_FLAGS => "-MMD -MF ", # empty space at the end is important!
             :ERROR_PARSER => Cxxproject::ClangCompilerErrorParser.new
           },
